@@ -15,9 +15,7 @@ import { Post } from '../models/post';
 export class OmoPosts {
   omoApiUrl = 'http://devel2.ordermate.online/wp-json/wp/v2';
 
-  constructor(public http: Http) {
-    console.log('Hello OmoPosts Provider');
-  }
+  constructor(public http: Http) {}
 
   load(): Observable<Post[]> {
     return this.http.get(`${this.omoApiUrl}/posts`)
@@ -26,7 +24,7 @@ export class OmoPosts {
 
   loadContent(id: number): Observable<Post> {
     return this.http.get(`${this.omoApiUrl}/posts/${id}`)
-      .map(res => <Post>res.json());
+      .map(res => <Post>(res.json()));
   }
 
 }

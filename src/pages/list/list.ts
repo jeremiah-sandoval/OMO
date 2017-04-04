@@ -19,14 +19,14 @@ import { PostPage } from '../post/post';
 export class ListPage {
   posts: Post[]
 
-  constructor(public navCtrl: NavController, public omoPosts: OmoPosts) {
+  constructor(public navCtrl: NavController, private omoPosts: OmoPosts) {
     omoPosts.load().subscribe(posts => {
       this.posts = posts;
     })
   }
 
-  goToPost(slug: string) {
-    this.navCtrl.push(PostPage, {slug});
+  goToPost(id: number) {
+    this.navCtrl.push(PostPage, {id});
   }
 
 }

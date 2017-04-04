@@ -17,16 +17,11 @@ export class PostPage {
   post: Post;
   id: number;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private omoPosts: OmoPosts) {
+  constructor(public navCtrl: NavController, private navParams: NavParams, private omoPosts: OmoPosts) {
     this.id = navParams.get('id');
     omoPosts.loadContent(this.id).subscribe(post => {
       this.post = post;
-      console.log(post)
     })
-  }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad PostPage');
   }
 
 }
