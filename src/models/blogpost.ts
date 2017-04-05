@@ -1,5 +1,6 @@
-export interface Post {
+export interface BlogPost {
   id: string;
+  date_gmt: string;
   guid: string;
   slug: string;
   status: string;

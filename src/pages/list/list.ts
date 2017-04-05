@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
-import { Post } from '../../models/post';
+import { BlogPost } from '../../models/blogpost';
 
 import { OmoPosts } from '../../providers/omo-posts';
 
@@ -17,15 +17,15 @@ import { PostPage } from '../post/post';
   templateUrl: 'list.html'
 })
 export class ListPage {
-  posts: Post[]
+  blogposts: BlogPost[]
 
   constructor(public navCtrl: NavController, private omoPosts: OmoPosts) {
-    omoPosts.load().subscribe(posts => {
-      this.posts = posts;
+    omoPosts.load().subscribe(blogposts => {
+      this.blogposts = blogposts;
     })
   }
 
-  goToPost(id: number) {
+  goToBlogPost(id: string) {
     this.navCtrl.push(PostPage, {id});
   }
 

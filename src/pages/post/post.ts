@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
-import { Post } from '../../models/post';
+import { BlogPost } from '../../models/blogpost';
+
 import { OmoPosts } from '../../providers/omo-posts';
 /*
   Generated class for the Post page.
@@ -14,13 +15,14 @@ import { OmoPosts } from '../../providers/omo-posts';
   templateUrl: 'post.html'
 })
 export class PostPage {
-  post: Post;
-  id: number;
+  blogpost: BlogPost;
+  id: string;
 
   constructor(public navCtrl: NavController, private navParams: NavParams, private omoPosts: OmoPosts) {
     this.id = navParams.get('id');
-    omoPosts.loadContent(this.id).subscribe(post => {
-      this.post = post;
+    omoPosts.loadContent(this.id).subscribe(blogpost => {
+      this.blogpost = blogpost;
+      console.log(blogpost.id)
     })
   }
 

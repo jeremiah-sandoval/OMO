@@ -1,3 +1,22 @@
 page-list {
-
+  ion-card-title {
+    color: #ff757c !important;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  p {
+  	color: #0e7886 !important;
+  	font-size: 16px;
+  	line-height: 20px;
+  }
+  a {
+  	color: #15bdb1 !important;
+  }
+  ion-label {
+  	white-space: normal !important;
+  }
+  .seemore {
+  	padding: 5px;
+  	float: right;
+  }
 }

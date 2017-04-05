@@ -3,7 +3,7 @@ import { Http } from '@angular/http';
 import { Observable } from 'rxjs/Rx';
 import 'rxjs/add/operator/map';
 
-import { Post } from '../models/post';
+import { BlogPost } from '../models/blogpost';
 
 /*
   Generated class for the OmoPosts provider.
@@ -17,14 +17,14 @@ export class OmoPosts {
 
   constructor(public http: Http) {}
 
-  load(): Observable<Post[]> {
+  load(): Observable<BlogPost[]> {
     return this.http.get(`${this.omoApiUrl}/posts`)
-      .map(res => <Post[]>res.json());
+      .map(res => <BlogPost[]>res.json());
   }
 
-  loadContent(id: number): Observable<Post> {
+  loadContent(id: string): Observable<BlogPost> {
     return this.http.get(`${this.omoApiUrl}/posts/${id}`)
-      .map(res => <Post>(res.json()));
+      .map(res => <BlogPost>(res.json()));
   }
 
 }
